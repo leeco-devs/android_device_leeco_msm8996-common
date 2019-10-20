@@ -636,7 +636,7 @@ vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa
 vendor/etc/init/vendor.qti.tftp.rc|091915c28a3bc574d39189688748cc922d9e65e4
 
 # RIL (IMS) - from tissot - 9/PKQ1.180917.001/V10.0.4.0.PDHMIXM
--app/uceShimService/uceShimService.apk:product/app/uceShimService/uceShimService.apk|d2ecdb607749b0496664db52b706e9340bd9b9f0
+-app/uceShimService/uceShimService.apk:product/app/uceShimService/uceShimService.apk|b540126bff4bfdf93b38bbaf2b5b845d0c3dc2f8
 lib64/lib-imscamera.so:product/lib64/lib-imscamera.so|6d9c63ad43e5dca62dea7a47e7b121bc4df317f9
 lib64/lib-imsvideocodec.so:product/lib64/lib-imsvideocodec.so|3450d725416f8f45d788fadc43f88d25937508a0
 lib64/lib-imsvt.so:product/lib64/lib-imsvt.so|7dfc533fc3c439a608b219838281d6c5f605ee22
