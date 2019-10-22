@@ -133,6 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
     persist.rcs.supported=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.net.doxlat=true \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
