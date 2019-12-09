@@ -132,12 +132,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
-    persist.data.qmi.adb_logmask=0 \
-    persist.net.doxlat=true \
     persist.rcs.supported=1 \
+    persist.vendor.net.doxlat=true \
+    persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.sib16_support=1 \
     ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
