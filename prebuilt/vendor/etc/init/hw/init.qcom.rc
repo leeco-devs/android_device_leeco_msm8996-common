@@ -218,6 +218,9 @@ on post-fs-data
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
 
+    # Secure Element directory for loader service functionality
+    mkdir /data/vendor/secure_element 0770 secure_element secure_element
+
     # Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
 
@@ -251,9 +254,6 @@ on post-fs-data
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
-
-    start vendor.dataqti
-    start vendor.dataadpl
 
 on early-boot
 
@@ -636,9 +636,6 @@ service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-on property:persist.radio.multisim.config=dsds
-    enable vendor.ril-daemon2
-
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
@@ -650,6 +647,15 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
+
+service qcom-c_main-sh /vendor/bin/init.class_main.sh
+    class main
+    user root
+    group root system
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start qcom-c_main-sh
 
 service proc-touchpanel-sh /vendor/bin/init.proc_touchpanel.sh
     class late_start
@@ -681,6 +687,13 @@ service vendor.charger /vendor/bin/charger
 on property:vendor.sys.listeners.registered=*
     setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
     setprop vendor.sys.keymaster.loaded ${vendor.sys.listeners.registered}
+
+# Set vendor-ril lib path based on Meta version
+on property:vendor.rild.libpath=*
+    setprop rild.libpath ${vendor.rild.libpath}
+
+on property:ro.vendor.radio.noril=*
+    setprop ro.radio.noril ${ro.vendor.radio.noril}
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
