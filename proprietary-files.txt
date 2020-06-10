@@ -449,8 +449,6 @@ lib64/lib-imsvt.so:product/lib64/lib-imsvt.so
 lib64/lib-imsvtextutils.so:product/lib64/lib-imsvtextutils.so
 lib64/lib-imsvtutils.so:product/lib64/lib-imsvtutils.so
 lib64/libdiag_system.so:product/lib64/libdiag_system.so
-lib64/libimscamera_jni.so:product/lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so:product/lib64/libimsmedia_jni.so
 lib64/librcc.so:product/lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so:product/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
@@ -485,8 +483,10 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 
-# IMS - from mata - essential/mata/mata:10/QP1A.190711.122/420
--priv-app/ims/ims.apk:product/priv-app/ims/ims.apk|426be1b83d6f608107d6dcf587080551abeab3e2
+# IMS - from daisy - daisy_sprout:10/QKQ1.191002.002/V11.0.2.0.QDLMIXM
+-product/priv-app/ims/ims.apk
+product/lib64/libimscamera_jni.so
+product/lib64/libimsmedia_jni.so
 
 # Keystore - from oneplus3t - OnePlus/OnePlus3/OnePlus3T:9/PKQ1.181203.001/1911042108 - OOS 9.0.6
 vendor/lib64/hw/keystore.msm8996.so|d7222a060d20e7df3cabbfe7125385e85821246e
