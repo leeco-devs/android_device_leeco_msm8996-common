@@ -623,6 +623,8 @@ vendor/lib/libmdmdetect.so|1433bc62549fcd9c3d14796487e9ad2f59b08da4
 vendor/radio/qcril_database/qcril.db|f25a9215fcc2445e73d1aa0b7ef9bdbd97e33f56
 
 # RIL
+product/etc/permissions/embms.xml
+product/etc/permissions/lpa.xml
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
