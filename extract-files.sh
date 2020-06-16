@@ -105,23 +105,6 @@ function blob_fixup() {
         patchelf --remove-needed "libmedia.so" "${2}"
         ;;
 
-    # Add shim for libbase LogMessage functions
-    vendor/bin/imsrcsd | vendor/lib64/lib-uceservice.so)
-        for  LIBBASE_SHIM in $(grep -L "libbase_shim.so" "${2}"); do
-            patchelf --add-needed "libbase_shim.so" "$LIBBASE_SHIM"
-        done
-        ;;
-
-    # Move ims libs to product
-    product/etc/permissions/com.qualcomm.qti.imscmservice.xml)
-        sed -i -e 's|file="/system/framework/|file="/product/framework/|g' "${2}"
-        ;;
-
-    # Move qti-vzw-ims-internal permission to vendor
-    vendor/etc/permissions/qti-vzw-ims-internal.xml)
-        sed -i -e 's|file="/system/vendor/|file="/vendor/|g' "${2}"
-        ;;
-
     esac
 }
 
