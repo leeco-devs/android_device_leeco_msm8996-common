@@ -578,7 +578,6 @@ vendor/bin/hvdcp_opti|316e3b0643981b502f58f2f48e4058b06a98706d
 -app/QtiTelephonyService/QtiTelephonyService.apk:product/app/QtiTelephonyService/QtiTelephonyService.apk|420b39e20a5166940c1e2e55e8d9c92ec910cebb
 framework/qcrilhook.jar:product/framework/qcrilhook.jar|784df5e6aa9df0127700b9a6f1083440ebfac057
 framework/QtiTelephonyServicelibrary.jar:product/framework/QtiTelephonyServicelibrary.jar|1df2f89ffb3aedc36e1c2ca7cafbf73a6a06b3fb
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|d1d3adfe6eff32a3013e146317324029181e3c4a
 vendor/bin/adpl|a8be3928ee03dbdfc9d05c8216d0a8e78233600d
 vendor/bin/ATFWD-daemon|390c764ab1b425e836f2b98cf039086d6729d751
 vendor/bin/netmgrd|48d3b006b85cf3b30ec5c4b972e64f2003c52e60
@@ -622,6 +621,7 @@ product/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml|68901007ba1a48ceb1b728fc3b5483dd51b5e3a0
 product/etc/permissions/telephonyservice.xml|a39eefcaf85fb8da60044fdbbcfddd95deb031c8
 product/framework/qti-telephony-common.jar|11d6b89b31a9bf65218b3676c2bbd296275b1932
+-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|20c011ffc54539161fa7cc05c55c9c5ed3f936b4
 vendor/etc/init/dataadpl.rc|cd4907d9bfd438fe5f5c86f5d6cec590ac0bac2a
 vendor/etc/init/dataqti.rc|6abfd1a850d782adbbb6f42c9d8ca870036b2ad1
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
