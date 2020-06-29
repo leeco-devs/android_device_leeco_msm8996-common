@@ -133,20 +133,22 @@ PRODUCT_PACKAGES += \
     libfui \
     Snap
 
-# Common config scripts
-PRODUCT_PACKAGES += \
-    init.proc_touchpanel.sh
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
     init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.power.rc \
-    init.qcom.usb.rc \
     init.recovery.qcom.rc \
+    init.qcom.sh \
+    init.class_main.sh \
+    init.qcom.usb.rc \
     ueventd.qcom.rc \
+    init.qcom.sensors.sh \
+    init.proc_touchpanel.sh \
+    init.qti.qseecomd.sh \
+    init.target.rc \
+    init.leeco.rc
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
