@@ -18,9 +18,9 @@ import hashlib
 import common
 import re
 
-def FullOTA_Assertions(info):
-  AddModemAssertion(info)
-  return
+#def FullOTA_Assertions(info):
+#  AddModemAssertion(info)
+#  return
 
 def FullOTA_InstallBegin(info):
   info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/mnt/system");');
@@ -38,9 +38,9 @@ def FullOTA_InstallEnd(info):
   info.script.AppendExtra('unmount("/mnt/vendor");');
   return
 
-def IncrementalOTA_Assertions(info):
-  AddModemAssertion(info)
-  return
+#def IncrementalOTA_Assertions(info):
+#  AddModemAssertion(info)
+#  return
 
 def IncrementalOTA_InstallBegin(info):
   info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/mnt/system");');
@@ -66,14 +66,14 @@ abort("Error: Vendor partition doesn\'t exist! Please reboot to recovery and fla
   info.script.AppendExtra(cmd)
   return
 
-def AddModemAssertion(info):
-  android_info = info.input_zip.read("OTA/android-info.txt")
-  m = re.search(r'require\s+version-modem\s*=\s*(.+)', android_info)
-  if m:
-    version = m.group(1).rstrip()
-    if len(version) and '*' not in version:
-      info.script.AppendExtra(('assert(leeco.verify_modem("%s") == "1");' % (version)))
-  return
+#def AddModemAssertion(info):
+#  android_info = info.input_zip.read("OTA/android-info.txt")
+#  m = re.search(r'require\s+version-modem\s*=\s*(.+)', android_info)
+#  if m:
+#    version = m.group(1).rstrip()
+#    if len(version) and '*' not in version:
+#      info.script.AppendExtra(('assert(leeco.verify_modem("%s") == "1");' % (version)))
+#  return
 
 def RunCustomScript(info, name, arg):
   info.script.AppendExtra(('run_program("/tmp/install/bin/%s", "%s");' % (name, arg)))
