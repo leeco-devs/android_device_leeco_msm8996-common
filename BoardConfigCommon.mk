@@ -54,7 +54,13 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CONFIG := vendor/msm-perf_defconfig
+TARGET_KERNEL_ADDITIONAL_CONFIG := vendor/leeco/leeco_msm8996-common.conf
 TARGET_KERNEL_CLANG_COMPILE := true
+# msm-4.4 does not build cleanly with the default clang, pin the one the
+# 4.4 kernel was brought up with
+TARGET_KERNEL_CLANG_CUSTOM := true
+TARGET_KERNEL_CLANG_VERSION := r383902
 TARGET_KERNEL_SOURCE := kernel/leeco/msm8996
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true

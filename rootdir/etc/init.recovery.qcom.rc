@@ -1,3 +1,8 @@
+on init
+    # msm-4.4 has no android_usb gadget, recovery USB has to use configfs
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "6a00000.dwc3"
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice

@@ -258,17 +258,13 @@ on post-fs-data
 
 on early-boot
 
-    # vendor.health-hal needs to be able to RW
-    chown system system /sys/devices/soc/qpnp-fg-18/cycle_counts_bins
-    # HardwareInfo needs to be able to read CC bins
-    chmod 644 /sys/devices/soc/qpnp-fg-18/cycle_counts_bins
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
     # dumpstate needs to read, vendor.health-hal needs to be able to RW
-    chown system system /sys/devices/soc/qpnp-fg-18/power_supply/bms/charge_full
+    chown system system /sys/class/power_supply/bms/charge_full
     # HardwareInfo needs to be able to read charge_full
-    chmod 644 /sys/devices/soc/qpnp-fg-18/power_supply/bms/charge_full
+    chmod 644 /sys/class/power_supply/bms/charge_full
 
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
@@ -381,11 +377,6 @@ on boot
     chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
-
-    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
-
-    # For bridgemgr daemon to inform the USB driver of the correct transport
-    chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
 
     setprop net.tcp.2g_init_rwnd 10
 
